@@ -11,4 +11,4 @@ variable "desired_capacity" {}
 variable "max_size" {}
 variable "min_size" {}
 variable "zone_id" {}
-variable "private_alb" {}
+variable "private_alb_dns" {}
