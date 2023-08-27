@@ -4,3 +4,11 @@ variable "vpc_id" {}
 variable "app_port" {}
 variable "sg_ingress_cidr" {}
 variable "ssh_ingress_cidr" {}
+variable "instance_type" {}
+variable "component" {}
+variable "app_subnet_ids" {}
+variable "desired_capacity" {}
+variable "max_size" {}
+variable "min_size" {}
+variable "zone_id" {}
+variable "private_alb" {}
