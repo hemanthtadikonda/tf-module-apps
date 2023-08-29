@@ -88,6 +88,7 @@ resource "aws_lb_listener_rule" "main" {
 }
 
 resource "aws_lb_target_group" "public" {
+  count = var.component == "frontend" ? 1 : 0
   name        = "${local.name_prefix}-pub"
   port        = var.app_port
   protocol    = "HTTP"
