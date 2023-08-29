@@ -63,7 +63,7 @@ resource "aws_route53_record" "main" {
   name    = var.component == "frontend" ? var.env : "${var.component}-${var.env}"
   type    = "CNAME"
   ttl     = 30
-  records = var.component == "frontend" ? var.public_alb_dns : [var.private_alb_dns]
+  records = [var.component == "frontend" ? var.public_alb_dns : var.private_alb_dns]
 }
 resource "aws_lb_target_group" "main" {
   name        = "${local.name_prefix}-tg"
