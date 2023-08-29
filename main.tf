@@ -87,4 +87,11 @@ resource "aws_lb_listener_rule" "main" {
   }
 }
 
+resource "aws_lb_target_group" "public" {
+  name        = "${local.name_prefix}-pub"
+  port        = var.app_port
+  protocol    = "HTTP"
+  target_type = "ip"
+  vpc_id      = var.default_vpc_id
+}
 
