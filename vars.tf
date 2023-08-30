@@ -17,3 +17,4 @@ variable "private_listener_arn" {}
 variable "public_alb_dns" {}
 variable "public_listener_arn" {}
 variable "default_vpc_id" {}
+variable "parameters" {}
