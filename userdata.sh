@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set-hostname ${component}
-
 yum install ansible python3.11-pip.noarch -y &>>/opt/userdata.log
 
 pip3.11 install botocore boto3   &>>/opt/userdata.log
