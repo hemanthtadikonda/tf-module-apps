@@ -18,3 +18,4 @@ variable "public_alb_dns" {}
 variable "public_listener_arn" {}
 variable "default_vpc_id" {}
 variable "parameters" {}
+variable "monitor_ingress_cidr" {}

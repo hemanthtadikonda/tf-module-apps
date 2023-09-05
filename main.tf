@@ -18,6 +18,13 @@ resource "aws_security_group" "main" {
     protocol         = "tcp"
     cidr_blocks      = var.ssh_ingress_cidr
   }
+  ingress {
+    description      = "Prometheus"
+    from_port        = 9100
+    to_port          = 9100
+    protocol         = "tcp"
+    cidr_blocks      = var.monitor_ingress_cidr
+  }
   egress {
     from_port        = 0
     to_port          = 0
@@ -121,6 +128,11 @@ resource "aws_autoscaling_group" "main" {
   tag {
     key                 = "Name"
     value               = local.name_prefix
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Monitor"
+    value               = "yes"
     propagate_at_launch = true
   }
 }
